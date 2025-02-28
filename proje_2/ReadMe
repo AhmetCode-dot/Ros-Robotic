@@ -1,0 +1,25 @@
+Bu proje, Robot Operating System (ROS) üzerinde çalışan bir robot için engelden kaçınma (obstacle avoidance) algoritması geliştirir. Robot, LaserScan verisini kullanarak etrafındaki engelleri tespit eder, önüne bir engel çıktığında durur, yönünü değiştirir ve tekrar hareket etmeye başlar. Bu davranış, robotun çevresindeki engellerle güvenli bir şekilde etkileşime girmesini sağlar.
+Ana Özellikler:
+
+Engel Algılama: Robot, LaserScan verilerini kullanarak etrafındaki engelleri tespit eder.
+Engelden Kaçınma: Engel tespit edildiğinde robot durur ve yönünü değiştirerek hareket etmeye devam eder.
+Güvenli Mesafe: Robot, önündeki engelleri belirli bir mesafeye kadar görmezden gelir.
+Gazebo ve RViz: Robot simülasyonu ve görselleştirme için Gazebo ve RViz kullanılır.
+Python 3: Python 3 kullanılarak geliştirilmiştir.
+Başlatma:
+
+Bu projeyi çalıştırmak için bir ROS launch dosyasına ihtiyacınız vardır. Aşağıdaki adımları takip ederek projeyi çalıştırabilirsiniz:
+
+Launch Dosyasını Çalıştırma:
+
+    roslaunch vize_sonrasi_odev rotate_move.launch
+
+Bu komut, ROS düğümünü başlatacak ve Gazebo simülasyonunu açarak robotu engellerden kaçacak şekilde hareket ettirecektir.
+
+RViz'de Görselleştirme:
+
+RViz'i açarak robotun hareketini görselleştirebilirsiniz.
+LaserScan verilerini RViz üzerinden izlemek için /scan topic'ini görselleştirebilirsiniz.
+
+Test Etme:
+Robot engel gördüğünde duracak, yönünü değiştirecek ve tekrar ilerleyecektir.
