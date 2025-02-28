@@ -1,0 +1,8 @@
+Izgara şeklinde bütün alanı tarayan bir temizlik robotu yapılmıştır. Robot (1,1.) noktasından başlayarak (9,9) noktasına kadar alanları tarar.
+ros_essentials_cpp-ros-noetic dosyasına girip src dosyasına girip topic02_motion dosyasına girip turtlesim dosyanına girip turtlesim_cleaner.py ve turtlesimmove.py dosyaları kopyalanır. Kopyalanan dosyalar akif_package dosyasında Odev_3 klasörüne atılır. 
+turtlesim_cleaner.py dosyası açılıp gridClean fonksiyonunda robotun ızgara şeklinde hareket etmesi için gerekli kod değişiklikleri yapılır.
+Çalıştırmak için;
+Terminal açılır ve - roscore - yazılarak terminal başlatılır.
+Yeni bir terminal açılır ve - rosrun turtlesim turtlesim_node - kodu yazılarak turtlebot çalıştırılır.
+Yeni bir terminal açılarak - rosrun akif_package turtlesim_cleaner.py - kodu yazılır.
+Bu işlemlerden sonra turtle ızgara şeklinde bütün alanı tarar.

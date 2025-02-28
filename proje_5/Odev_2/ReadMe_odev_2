@@ -1,0 +1,9 @@
+Kullanıcıdan uzunlukları alınan diktdörtgeninin alanını hesaplayan projedir
+akif_package src klasöründen dec_client.py ve dec_server dosyalrı kopyalanıp Odev_2 klasörüne yapıştırıldı dec_client rectangle_client diye değiştirildi. dec_server rectangle server olarak değiştirildi.
+akif_package klasörü içerisinde CMakeLists.txt içerisine add_service_files RectangleArea.srv servis dosyası eklendi.
+akif_package dosyası içindeki srv klasörüne RectangleArea.srv txt dosyası oluşturulup float a , float b , float alan yazıldı. Kullanıcıdan aldığımız değerler bunlar.
+Terminal açılarak - roscore - yazılıp ROS çalıştırılır.
+Yeni terminal açılır ve - rosrun akif_package rectangle_server.py - kodu yazılır
+Yeni terminal açılır ve - rosrun akif_package rectangle_client.py - a b (a ve b kullanıcıdan alınan sayılar) kodu yazılır.
+Sistem bu şekilde çalışmış olur ve istenilen uzunluklar için (a,b) alan bulunmuş olur
+

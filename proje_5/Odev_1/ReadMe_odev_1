@@ -1,0 +1,11 @@
+akif_package içine Odev_1 klasörü oluşturulup içine subscriber ve publisher atıldı. 
+akif_package msg dosyalarında OdevSensor.msg (IoTSensor.msg) dosyası oluşturuldu
+Publisher içine robotun hızını ve pozisyonunusürekli yayınlayacak şekilde isterlerin kodları yazıldı. 
+Subscriber publisher yayımcıdan gelen veriyi alacak ve robotun hızını, konumunu ve hedefini kontrol edecek isterlerin kodları yazıldı.
+Terminal açıldı ve (cd ~/rgiris_ws/) kodu yazıldı bu sayede rgiris dosyasına erişildi. 
+Terminal açıldı (catkin_make) kodu çalıştırılarak publisher ve subscriber inde yaptığımız değişiklikler derlendi.
+Terminal açıldı ve (rosrun akif_package Odev_1_subscriber.py) kodu yazıldı , bu sayede subscriber çalıştırılmış oldu.
+Terminal açıldı ve (rosrun akif_package Odev_1_publisher.py) kodu yazıldı , bu sayede publisher çalıştırılmış oldu.
+Publisher çalıştıktan sonra >>Robot Status: x=1.4648608262221408, y=1.7976899<< şeklinde robotun konumunu gösteren çıktı alınır.
+Subscriber çalıştıktan sonra >>Target Position: (10.0, 10.0) <<Distance to Target: 8.68 meters>> >>Moving towards target...<< >>Robot Status: x=5.436188220977783, y=7.5292301177<< çıktıları alınır.
+
