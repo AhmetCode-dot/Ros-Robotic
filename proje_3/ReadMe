@@ -1,0 +1,8 @@
+vize_sonra_odev2 adında dosya oluşturuldu.Dosyanın içerisine src, CMakeLists ve package.xml dosyaları açıldı ve robotun hareketi için gerekli değiştirmeler yapıldı.
+Slam kullanılarak harita oluşturuldu ve kaydedildi.
+src dosyası içerisinde uchareket.py robotun 3 farklı yere gitmesini sağlayan python kodları eklendi.
+ Çalıştırmak için öncelikle terminal açılmalı ve <roslaunch turtlebot3_gazebo turtlebot3_house.launch> kodu yazılarak gazebo ortamının çalıştırılması sağlanır.
+ Ardından yeni bir terminal açılmalı ve <roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=/home/ahmet/rgiriss_ws/src/vize_sonra_odev2/my_house_map.yaml> kodu yazılmalı oluşturduğumuz yeni harita rviz ortamında açılması sağlanır. Rviz ortam açıldıktan sonra gazebo ve rviz ortamında robotun başlangıç konumu aynı değil ise rviz ortamında sol üstte 2D Pose Estimate basıp gazebo ortamında robotun bulunduğu konuma elle yerleştirilebilir.
+ Ardından yeni terminal açılarak  <rosrun vize_sonra_odev2 uchareket.py> kodu yazılarak robotun üç farklı noktaya gittiğini gözlemleyebiliriz.
+ -------------------------------------------------------------------------------------------------------
+ 
