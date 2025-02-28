@@ -1,0 +1,24 @@
+Bu proje robotun en yakın duvara gidip duvarların kenarından duvara 0.5 metre uzaklıktan giderek tüm haritayı tarar ve haritayı kaydeder. Kaydedilen haritayı tamamen tarayarak süpürme similasyonudur.
+final_odev dosyası robotun yukarıda bahsedilen işleri yapması için kodlar, CMakeLists.xml ve package.xml dosyaları yer almaktadır.
+CMakeLists.xml dosyasında robotun taşıması gereken özellikler (sensor, navigasyon vb.) yer almaktadır.
+package.xml dosyasınnda navigasyon tf gibi özelliklerinin mesaj kaynak kodları yer almaktadır.
+final_odev dosyasında src klasöründe robotun istenilen hareketlerini yapması için python kodları yer almaktadır.
+duvara_git.py dosyasında en yakın duvara gitmesi için gerekli algoritmalar yer almaktadır. Çalıştırılınca robot harekete başlar ve en yakın duvara gider. scan, twist, gibi robot hareketi için gerekli özellikler yer almaktadır. velocity_publisher fonksiyonu gibi robotun hareketlenmesini sağlayacak algoritmalar yer almaktadır. angle_to_rad fonksiyonu ise robotun dönmesi için yazılmıştır.
+duvar_takip.py dosyasında en yakın duvara giden robot duvarların kenarından giderek tüm haritayı tarama yapar ve taranan harita kaydedilir. duvar_takip.py dosyasında 75 saniye boyunca duvarların kenarından hareket eden robot 75 saniyenin sonunda haritayı src dosyasına kaydeder. laser, twist gibi robot konumu ve hareketi için gerekli içerikler yer almaktadır. scan_callback lidar veirisini işler, de__init__(self) robot hareketi için yazılmıştır. save_map harita kaydetme işlemi içindir. stop_robot 75 saniye gezen robotu durdurmak için yazılmıştır.
+supurge_robot.py dosyasında kaydedilen haritayı robot tüm haritayı tarayacak şekilde dolaşır.odom verileri, laserscan, twist gibi hareket ve konumla alakalı gerekli imporlar içerir çünkü kaydedilen haritada gezmektedir robot. kaydedilen haritada robot publish ve subs mantığıyla konum bilgileri gelir ve işlenir engel görünce kaçma işini yapar ve döner ; sola dönüşler ve sağa dönüşler yaparak tüm haritayı tarar.
+
+ÇALIŞTIRMAK İÇİN;
+ 
+Öncelikle gazebo ortamı açılmalı açmak için Terminal açılmalı 
+	<roslaunch turtlebot3_gazebo turtlebot3_house.launch>  yazılmalıdır.
+Ardından yeni terminal açılmalı ve
+ 	< roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping> kodu yazılmalı ve harita kayıt işlemi için gerekli olan slam ortamı rvizde açılmalı.
+ Ardından yeni terminal açılmalı ve
+	 <rosrun final_odev duvara_git.py > kodu yazılmalı bu kod robotun en yakın duvara gitmesini sağlar.
+Duvara gitme kodu işlemi sonlandığında hemen ardından <rosrun final_odev duvar_takip.py> kodu çalıştırılarak robotun duvarları takip etmesini sağlar. Çalıştırdıktan sonra 75 saniye beklenmelidir çünkü bu süre sonrasında haritayı tarayan robot haritayı kaydeder ve robot durur.
+Robot durduktan sonra yeni terminal açılmalı ve <roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=/home/ahmet/rgiriss_ws/src/final_odev/src/map.yaml> yazılarak kaydedilen harita navigation.rviz ortamı açılmalıdır. Açıldığında hata veriyor olabilir kapatıp tekrar açılmalıdır. Açıldığında gazebo ve rviz ortamında robot aynı konumda bulunmayabilir rviz ortamında 2D Pose Estimate tıklanarak robotu gazebodaki konuma yerleştirilmelidir. Robot konumu aynı olduğu zaman yeni terminal açılmalıdır ve 
+<rosrun final_odev supurge_robot.py> kodu yazılarak robotun tüm haritayı tarayacak şekilde taraması sağlanır. Robot bazen takılabilir takıldığı zaman gazebo ortamında robotun konnumu değiştirilebilir.
+
+
+
+
