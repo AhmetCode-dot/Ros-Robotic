@@ -1,0 +1,11 @@
+<launch>
+
+	<include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch"/>
+
+
+
+    <node pkg="Ahmet_Bagriyanik" type="turtlebot_auto.py" name="turtlebot_auto" output="screen"/>
+    <node pkg="Ahmet_Bagriyanik" type="yol.py" name="yol" output="screen"/>
+    <node pkg="Ahmet_Bagriyanik" type="konya_hava.py" name="konya_hava" output="screen"/>
+</launch>
+

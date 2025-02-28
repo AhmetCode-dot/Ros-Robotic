@@ -1,0 +1,8 @@
+Ahmet_Bagriyanik adında yeni bir dosya açıldı
+Ahmet_Bagriyanik dosyası içerisine launch adında dosya eklendi. Launch bütün isterlerin bir tane terminal üzerinden çalışması için kullanılıyor. İsterler için launch dosyası için gerekli eklemeler yapıldı.
+CMakeLists.txt içerisinde projede kullanılması için gerekli yerler açıldı.
+package.xml dosyası içerisinde dosya adı gibi gerekli değiştirmeler yapıldı.
+src dosyası içerisindeki konya_hava.py pythın kodu içerisinde robotun konyanın hava sıcaklığını ölçmesi için gerekli python kodları vardır.
+turtlebot_auto.py dosyası içerisinde robotun başlangıçta yapması istenen hareketlerin python kodları er alıyor.
+yol.py dosyası içerisinde robotun başlangıçta yaptığı istenilen hareketlerden sonra w a s d kullanarak el ile hareket etmesi için gereken kodlar yer almaktadır.
+<roslaunch Ahmet_Bagriyanik turtlebot_project.launch> kodunu terminale yazarak gazebo açılmasını sağlayıp robottan isterlerin gerçekleştiğini görebilirsiniz.
